@@ -9,7 +9,7 @@ const SimpleJsonStore = require('simple-json-store');
 const store = new SimpleJsonStore('./data-2.json', { notes: [] });
 
 
-router.get('/', function getAddPage(req, res) {
+router.get('/', function getIndexPage(req, res) {
   let viewModel = req.viewModel;
   // We can extend the viewModel and add new properties
   // e.g. viewModel.appName = 'Cardo';
@@ -17,7 +17,7 @@ router.get('/', function getAddPage(req, res) {
   //      viewModel.choices = ['apple', 'orange', 'grapes'];
   // Read more: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
   viewModel.notes = store.get('notes');
-  res.render('index.pug', viewModel);
+  res.render('add.pug', viewModel);
 });
 
 router.post('/', function submitNotes(req, res) {
@@ -26,7 +26,6 @@ router.post('/', function submitNotes(req, res) {
   notes.push({
     title: req.body.title,
     content: req.body.content,
-    author: req.body.author,
     price: req.body.price
   });
   store.set('notes', notes);

@@ -26,7 +26,8 @@ router.post('/', (req, res) => {
   const newNote = {
     id: notes.length > 0 ? notes[notes.length - 1].id + 1 : 1,
     title: req.body.title,
-    description: req.body.description
+    description: req.body.description,
+    price: req.body.price
   };
 
   notes.push(newNote);
@@ -43,6 +44,7 @@ router.put('/:id', (req, res) => {
     if(notes[i].id === id) {
       notes[i].title = req.body.title;
       notes[i].description = req.body.description;
+      notes[i].price = req.body.price;
       break;
     }
   }

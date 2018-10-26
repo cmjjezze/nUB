@@ -29,9 +29,11 @@
     event.preventDefault();
     var titleInput = document.getElementById('title');
     var descriptionTextarea = document.getElementById('description');
+    var priceTextarea = document.getElementById('price');
     var payload = {
       title: titleInput.value,
-      description: descriptionTextarea.value
+      description: descriptionTextarea.value,
+      price: priceTextarea.value
     };
     axios.post('http://localhost:3300/api/notes', payload)
       .then(function(res) {
@@ -45,7 +47,7 @@
 
   function renderNotes(notes) {
     notesTable.innerHTML = '';
-    var headers = ['ID', 'Title', 'Description'];
+    var headers = ['ID', 'Title', 'Description', 'Price'];
     var thead = document.createElement('tr');
     headers.forEach(function(header) {
       var td = document.createElement('td');
@@ -58,12 +60,15 @@
       var tdId = document.createElement('td');
       var tdTitle = document.createElement('td');
       var tdDescription = document.createElement('td');
+      var tdPrice = document.createElement('td');
       tdId.textContent = note.id;
       tdTitle.textContent = note.title;
       tdDescription.textContent = note.description;
+      tdDescription.textContent = note.price;
       tr.append(tdId);
       tr.append(tdTitle);
       tr.append(tdDescription);
+      tr.append(tdPrice);
       notesTable.append(tr);
     });
   }

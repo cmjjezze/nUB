@@ -2,8 +2,9 @@
 	"notes": [
 		{
 			"id": 1,
-			"title": null,
-			"description": null
+			"title": "asd",
+			"description": "asd",
+			"price": "123"
 		}
 	]
 }

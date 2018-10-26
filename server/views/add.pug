@@ -1,0 +1,71 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins')
+    title= title
+
+    link(rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
+style.
+
+  body,h2,h3,h4,h5 {font-family: "Poppins", arial}
+  body {font-size:20px;}
+  .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+  .w3-half img:hover{opacity:1}
+  h1 {font-size:50px;font-family: "Poppins", arial;background-color:orange}
+body
+    main#cardoVue(role="main" class="container")
+      tr
+         img(src='/add-icon.png' style='width:8%' onclick='addNote')(class="button")  
+         h1 nUB Add Product
+      form#addNoteForm(action="/" method="POST")
+        .form-group
+          label Product Name
+          input.form-control#title(type="text"
+            name="title" v-model="title")
+        .form-group
+          label Description
+          textarea.form-control#description(rows="3"
+            name="description" v-model="description")
+        .form-group
+          label Price
+          input.form-control#price(type="text"
+            name="price" v-model="price")
+        .form-group
+          button.btn(type="button"
+            v-on:click="addNote" style='background-color:orange') Add Product
+          button.btn#clearBtn(type="button"
+            v-on:click="clear") Clear
+            
+
+      section
+        table.table#notesTable
+          tr
+            th Item
+            th Description
+            th Price
+            th Quantity
+            
+            
+            
+          tr(v-for="note in notes")
+            td {{ note.title }}
+            td {{ note.description }}
+            td {{ note.price }}
+            td
+              button.btn(type="button" v-on:click="addNote" style='background-color:orange') Add
+              <button class="btn" v-on:click="deleteNote(note)"><i class="fa fa-trash"> 
+          
+            
+              
+          
+    script(src="/axios.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+    script(src="/cardo-vue.js")
+
+
+

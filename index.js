@@ -11,6 +11,7 @@ const notesRouter = require('./server/routers/notesRouter');
 const aboutRouter = require('./server/routers/aboutRouter');
 const mainRouter = require('./server/routers/mainRouter');
 const indexRouter = require('./server/routers/indexRouter');
+const addRouter = require('./server/routers/addRouter');
 const port = 3300;
 
 app.use(morgan('dev'));
@@ -31,6 +32,7 @@ app.set('view engine', 'pug');
 
 app.use('/', mainRouter);
 app.use('/index', indexRouter);
+app.use('/add', addRouter);
 app.use('/about', aboutRouter);
 app.use('/api/notes', notesRouter);
 

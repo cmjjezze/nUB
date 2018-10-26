@@ -2,6 +2,7 @@ doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
     link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
     link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins')
@@ -118,7 +119,7 @@ body
         table.table#notesTable
           tr
             img(src='/bag-icon.png' style='width:8%' onclick='onClick(this)')
-            h1  Shopping Bag 
+            h1  Shopping Cart
       
   
       td
@@ -129,16 +130,18 @@ body
           tr
             th Item
             th Description
-            th Quantity
             th Price
+            th Quantity
+            
             
           tr(v-for="note in notes")
             td {{ note.title }}
             td {{ note.description }}
+            td  {{ note.price }}
             td
               button.btn(type="button" v-on:click="addNote" style='background-color:orange') Add
-              button.btn(v-on:click="deleteNote(note)" style='background-color:grey') Delete
-            td
+              <button class="btn" v-on:click="deleteNote(note)"><i class="fa fa-trash"> 
+            
               
           
     script(src="/axios.min.js")

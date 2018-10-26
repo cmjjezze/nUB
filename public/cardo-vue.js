@@ -4,6 +4,7 @@
     data: {
       title: null,
       description: null,
+      price: null,
       notes: []
     },
     created: function() {
@@ -21,7 +22,8 @@
         var self = this;
         var payload = {
           title: self.title,
-          description: self.description
+          description: self.description,
+          price: self.price
         };
         axios.post('/api/notes', payload)
           .then(function(res) {
@@ -39,6 +41,7 @@
       clear: function() {
         this.title = null;
         this.description = null;
+        this.price = null;
       },
       deleteNote: function(note) {
         var self = this;
