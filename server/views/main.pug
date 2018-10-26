@@ -1,0 +1,181 @@
+doctype html
+
+meta(charset='UTF-8')
+meta(name='viewport' content='width=device-width, initial-scale=1')
+link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
+link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins')
+style.
+  body,h1,h2,h3,h4,h5 {font-family: "Poppins", arial}
+  body {font-size:16px;}
+  .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+  .w3-half img:hover{opacity:1}
+  
+
+// Sidebar/menu
+nav#mySidebar.w3-sidebar.w3-orange.w3-collapse.w3-top.w3-large.w3-padding(style='z-index:3;width:300px;font-weight:bold;')
+  br
+  a.w3-button.w3-hide-large.w3-display-topleft(href='javascript:void(0)' onclick='w3_close()' style='width:100%;font-size:22px') 
+  .w3-container
+    h3.w3-padding-64
+      b
+        | 
+        br
+        |
+  .w3-bar-block
+    a.w3-bar-item.w3-button.w3-hover-white(href='#' onclick='w3_close()')(style='color:white') Home
+    a.w3-bar-item.w3-button.w3-hover-white(href='#showcase' onclick='w3_close()')(style='color:white') Showcase
+    a.w3-bar-item.w3-button.w3-hover-white(href='#services' onclick='w3_close()')(style='color:white') Services
+    a.w3-bar-item.w3-button.w3-hover-white(href='#developers' onclick='w3_close()')(style='color:white') Developers
+    a.w3-bar-item.w3-button.w3-hover-white(href='#contact' onclick='w3_close()')(style='color:white') Contact
+// Top menu on small screens
+header.w3-container.w3-top.w3-hide-large.w3-orange.w3-xlarge.w3-padding
+  a.w3-button.w3-orange.w3-margin-right(href='javascript:void(0)' onclick='w3_open()') &#x2630;
+// Overlay effect when opening sidebar on small screens
+#myOverlay.w3-overlay.w3-hide-large(onclick='w3_close()' style='cursor:pointer' title='close side menu')
+// !PAGE CONTENT!
+.w3-main(style='margin-left:340px;margin-right:40px')
+  // Header
+  #showcase.w3-container(style='margin-top:80px')
+    h1.w3-jumbo(style='color:orange')
+      b nUB DOG SHOP
+    h1.w3-xxxlarge.w3-text-orange
+      b Dog Accessories & Grooming
+    hr.w3-round(style='width:50px;border:5px solid orange')
+  // Photo grid (modal)
+  .w3-row-padding
+    .w3-half
+      img(src='/soap.png' style='width:100%' onclick='onClick(this)' alt='Only Natural Pet® EasyDefense™ Flea & Tick Pet Wipes')
+      img(src='/crate.png' style='width:100%' onclick='onClick(this)' alt='Great Choice® Double Door Wire Dog Crate')
+      img(src='/treat.png' style='width:100%' onclick='onClick(this)' alt='Purina® Beggin Strips Dog Treat - Bacon')
+    .w3-half
+      img(src='/bowl.png' style='width:100%' onclick='onClick(this)' alt='Top Paw® Halloween Spider Web Dog Bowl')
+      img(src='/food.png' style='width:100%' onclick='onClick(this)' alt='Purina® Pro Plan® Savor Shredded Blend Adult Dog Food - Chicken & Rice')
+      img(src='/costume.png' style='width:100%' onclick='onClick(this)' alt='DC Comics™ Superman Pet Costume')
+  // Modal for full size images on click
+  #modal01.w3-modal.w3-black(style='padding-top:0' onclick="this.style.display='none'")
+    span.w3-button.w3-black.w3-xxlarge.w3-display-topright &times;
+    .w3-modal-content.w3-animate-zoom.w3-center.w3-transparent.w3-padding-64
+      img#img01.w3-image
+      p#caption
+  // Services
+  #services.w3-container(style='margin-top:75px')
+    h1.w3-xxxlarge.w3-text-orange
+      b Services.
+    hr.w3-round(style='width:50px;border:5px solid orange')
+    p
+      | We put your pet first. As a team of pet owners we understand the relationship that pet owners have with their beloved animals and we will only provide the best possible service to benefit your pet.
+    p
+      | At nUB DOG SHOP we want to save you time when buying pet food and supplies, that’s why our website is easy to use 
+      | and we offer a fast, efficient service. We can offer your pets with absolutely everything they need to make their & your 
+      | life better - from the best dog food, to grooming equipment and their very own homes within the house.
+    h1.w3-xxxlarge.w3-text-orange
+      a.w3-bar-item.w3-button.w3-hover-orange.w3-grey(class='button' href='http://localhost:3300/index')(style='color:orange') SHOP
+      |
+      b
+      |
+  // Developers
+  #designers.w3-container(style='margin-top:75px')
+    h1.w3-xxxlarge.w3-text-orange
+      b Developers
+    hr.w3-round(style='width:50px;border:5px solid orange')
+    p The best BLOCKCHAIN CADET's in the world.
+    p
+      | At nUB, we are a cadet's engineered to deliver solutions for the blockchain technology. 
+      | And those solutions often come from having a variety of viewpoints and perspectives at the table.
+      | So it should come as no surprise that there's a spirit of inclusion found in everything we do. Having a wider range of experiences to draw from doesn't just make us a diverse company. It makes us a better company.
+      | We do practice INTEGRITY, UBUNTU and MAGIS.
+    p
+      b Our designers are thoughtfully chosen
+      | :
+  // The Team
+  .w3-row-padding.w3
+    .w3-col.m5.w3-margin-bottom
+      .w3-light-grey
+        img(src='/CUEVAS, JEZZE JAYSON M VP1_0323.jpg' alt='John' style='width:100%')
+        .w3-container
+          h3 Jonel Ranque-Arellano
+          p.w3-opacity BLOCKCHAIN CADET
+          p
+            | A Graduate from Arellano University(JAS) with a Bachelor's Degree in Information System.
+    .w3-col.m5.w3-margin-bottom
+      .w3-light-grey
+        img(src='/CUEVAS, JEZZE JAYSON M VP1_0323.jpg' alt='Jane' style='width:100%')
+        .w3-container
+          h3 Beau Gabriel Baslao
+          p.w3-opacity BLOCKCHAIN CADET
+          p
+            | A Graduate from University of Southeastern Philippines with a Bachelor's Degree in Information Technology.
+    .w3-col.m5.w2-margin-right
+      .w3-light-grey
+        img(src='/CUEVAS, JEZZE JAYSON M VP1_0323.jpg' alt='Mike' style='width:100%')
+        .w3-container
+          h3 Jezze Jayson M. Cuevas
+          p.w3-opacity BLOCKCHAIN CADET
+          p
+            | A Graduate from Rizal Technological University with a Bachelor's Degree in Information and Communication Technology.
+    .w3-col.m5.w3-margin-bottom
+      .w3-light-grey
+        img(src='/CUEVAS, JEZZE JAYSON M VP1_0323.jpg' alt='Mike' style='width:100%')
+        .w3-container
+          h3 Rainelle Quinto
+          p.w3-opacity BLOCKCHAIN CADET
+          p
+            | A Graduate from Central Colleges of the Philippines with a Bachelor's Degree in Computer Science.
+  
+  // Contact
+  #contact.w3-container(style='margin-top:75px')
+    h1.w3-xxxlarge.w3-text-orange
+      b Contact Us
+    hr.w3-round(style='width:50px;border:5px solid orange')
+    p
+      | Do you want us to pet your dog? Fill out the form and fill me in with the details :) We love meeting new people!
+    form(action='/action_page.php' target='_blank')
+      .w3-section
+        label Name
+        input.w3-input.w3-border(type='text' name='Name' required='')
+      .w3-section
+        label Email
+        input.w3-input.w3-border(type='text' name='Email' required='')
+      .w3-section
+        label Message
+        input.w3-input.w3-border(type='text' name='Message' required='')
+      button.w3-button.w3-block.w3-padding-large.w3-orange.w3-margin-bottom(type='submit') Send Message
+  // End page content
+// W3.CSS Container
+.w3-light-grey.w3-container.w3-padding-32(style='margin-top:75px;padding-right:58px')
+  p.w3-right
+    
+script.
+  // Script to open and close sidebar
+  function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+  }
+  function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+  }
+  // Modal Image Gallery
+  function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+  }
+
+
+  // Start of LiveChat (www.livechatinc.com) code
+script(type='text/javascript').
+  window.__lc = window.__lc || {};
+  window.__lc.license = 10258857;
+  (function() {
+  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+  })();
+noscript
+  a(href='https://www.livechatinc.com/chat-with/10258857/') Chat with us
+  | ,
+  | powered by 
+  a(href='https://www.livechatinc.com/?welcome' rel='noopener' target='_blank') LiveChat
+// End of LiveChat code
