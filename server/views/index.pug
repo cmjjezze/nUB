@@ -1,0 +1,164 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins')
+    title= title
+
+    link(rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
+style.
+
+  body,h2,h3,h4,h5 {font-family: "Poppins", arial}
+  body {font-size:20px;}
+  .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+  .w3-half img:hover{opacity:1}
+  h1 {font-size:50px;font-family: "Poppins", arial;background-color:orange}
+
+body
+    main#cardoVue(role="main" class="container")
+      h1#pageTitle nUB DOGSHOP
+
+      section
+        table.table#notesTable
+          tr
+            img(src='/soap.png' style='width:25%' onclick='onClick(this)' alt='Only Natural Pet® EasyDefense™ Flea & Tick Pet Wipes')
+            button.btn(type="button" v-on:click="addNote" style='background-color:orange') BUY
+            tr  ₱ 537.01
+          p
+            | Only Natural Pet® EasyDefense™ Flea & Tick Pet Wipes
+          p
+          b DESCRIPTION:
+          p Only Natural Pet EasyDefense Flea & Tick Wipes protect your pet naturally. These biodegradable towelettes are made with FSC certified material, infused with geraniol and peppermint oil, and are a safe and convenient way to naturally repel fleas and ticks.
+     
+          td
+          tr
+
+      section
+        table.table#notesTable
+          tr
+            img(src='/crate.png' style='width:25%' onclick='onClick(this)' alt='Great Choice® Double Door Wire Dog Crate')
+            button.btn(type="button" v-on:click="addNote" style='background-color:orange') BUY
+            tr  ₱ 6181.29
+          p
+            | Great Choice® Double Door Wire Dog Crate
+          p
+          b DESCRIPTION:
+          p The Great Choice Double Door Dog Crate provides training and containment solutions for the largest of breeds. The crate features convenient front and side door access, a heavy-duty corner drop-pin design, and slide-bolt latches that keep your pet safe and secure. The tough, ABS plastic pan is easy to clean and the black electro-coat finish provides long lasting protection. Only at nUB. 
+     
+          td
+          tr
+      
+      section
+        table.table#notesTable
+          tr
+            img(src='/treat.png' style='width:25%' onclick='onClick(this)' alt='Purina® Beggin Strips Dog Treat - Bacon')
+            button.btn(type="button" v-on:click="addNote" style='background-color:orange') BUY
+            tr  ₱ 225.23
+          p
+            | Purina® Beggin Strips Dog Treat - Bacon
+          p
+          b DESCRIPTION:
+          p As the original strip that started it all, Purina Beggin' Strips Bacon Flavor adult dog snacks offer your best buddy an over-the-top bacon experience. Made with real bacon, these treats actually smell and taste like everyone's favorite sizzlin' breakfast fare. 
+     
+          td
+          tr
+
+      section
+        table.table#notesTable
+          tr
+            img(src='/bowl.png' style='width:25%' onclick='onClick(this)' alt='Top Paw® Halloween Spider Web Dog Bowl')
+            button.btn(type="button" v-on:click="addNote" style='background-color:orange') BUY
+            tr  ₱ 240.28
+          p
+            | Top Paw® Halloween Spider Web Dog Bowl
+          p
+          b DESCRIPTION:
+          p Feed your dog in a bowl that allows him to join in on the Halloween fun with this Top Paw Halloween Bowl. This fun bowl features spider webs along its outside with a scary spider inside, and includes a non-skid bottom so that it will stay in place. Only at nUB. 
+     
+          td
+          tr
+
+      section
+        table.table#notesTable
+          tr
+            img(src='/food.png' style='width:25%' onclick='onClick(this)' alt='Purina® Pro Plan® Savor Shredded Blend Adult Dog Food - Chicken & Rice')
+            button.btn(type="button" v-on:click="addNote" style='background-color:orange') BUY
+            tr  ₱ 2460.90
+          p
+            | Purina® Pro Plan® Savor Shredded Blend Adult Dog Food - Chicken & Rice
+          p
+          b DESCRIPTION:
+          p Your dog will love this savory mixture of crunchy kibble and tender shredded morsels of real meat with other high-quality ingredients. This textured blend contains approximately 85% hard kibble and 15% shredded pieces, with real chicken, beef or lamb as the number one ingredient. 100% complete and balanced nutrition for adult dogs. 
+     
+          td    
+          tr
+
+      section
+        table.table#notesTable
+          tr
+            img(src='/costume.png' style='width:25%' onclick='onClick(this)' alt='DC Comics™ Superman Pet Costume')
+            button.btn(type="button" v-on:click="addNote" style='background-color:orange') BUY
+            tr  ₱ 2460.90
+          p
+            | DC Comics™ Superman Pet Costume
+          p
+          b DESCRIPTION:
+          p It's a bird, it's a plane, it's SUPER DOG! Turn your pooch into the superhero he is with this DC Comics Originals Superman Costume. Lightweight and comfortable, this costume also comes with an attached cape! Your dog will be the hit of the costume parade dressed up as the Pup of Steel. Only at nUB. 
+     
+          td  
+          tr
+          tr
+          p
+            |
+            
+      section
+        table.table#notesTable
+          tr
+            img(src='/bag-icon.png' style='width:8%' onclick='onClick(this)')
+            h1  Shopping Bag 
+      
+  
+      td
+      td
+        
+      section
+        table.table#notesTable
+          tr
+            th Item
+            th Description
+            th Quantity
+            th Price
+            
+          tr(v-for="note in notes")
+            td {{ note.title }}
+            td {{ note.description }}
+            td
+              button.btn(type="button" v-on:click="addNote" style='background-color:orange') Add
+              button.btn(v-on:click="deleteNote(note)" style='background-color:grey') Delete
+            td
+              
+          
+    script(src="/axios.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+    script(src="/cardo-vue.js")
+
+
+
+// Start of LiveChat (www.livechatinc.com) code
+script(type='text/javascript').
+  window.__lc = window.__lc || {};
+  window.__lc.license = 10258857;
+  (function() {
+  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+  })();
+noscript
+  a(href='https://www.livechatinc.com/chat-with/10258857/') Chat with us
+  | ,
+  | powered by 
+  a(href='https://www.livechatinc.com/?welcome' rel='noopener' target='_blank') LiveChat
+// End of LiveChat code
