@@ -137,11 +137,13 @@ body
           tr(v-for="note in notes")
             td {{ note.title }}
             td {{ note.description }}
-            td  {{ note.price }}
+            td {{ note.price }}
             td
-              button.btn(type="button" v-on:click="addNote" style='background-color:orange') Add
-              <button class="btn" v-on:click="deleteNote(note)"><i class="fa fa-trash"> 
-            
+              button.btn(type="button" v-on:click="addNote" style='background-color:orange') Add Quantity
+              <button class="btn" v-on:click="deleteNote(note)"><i class="fa fa-trash"></i>
+              
+             
+          
               
           
     script(src="/axios.min.js")
