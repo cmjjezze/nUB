@@ -40,6 +40,7 @@ body
             v-on:click="addNote" style='background-color:orange') Add Product
           button.btn#clearBtn(type="button"
             v-on:click="clear") Clear
+            button.btn(type="button" v-on:click="save" ) Save
             
 
       section
@@ -58,7 +59,9 @@ body
             td {{ note.price }}
             td
               button.btn(type="button" v-on:click="addNote" style='background-color:orange') Add
-              <button class="btn" v-on:click="deleteNote(note)"><i class="fa fa-trash"> 
+              <button class="btn" v-on:click="deleteNote(note)"><i class="fa fa-trash"></i>
+              button.btn(type="button" v-on:click="view(note)")  View
+              
           
             
               

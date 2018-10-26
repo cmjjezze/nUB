@@ -59,6 +59,29 @@
           })
           .catch(function(err) {
           });
+      },
+      view: function(note) {
+        this.title = note.title;
+        this.description = note.description;
+        this.price = note.price;
+        localStorage.setItem('ID', note.id);
+      },
+      save: function() {
+        const id = localStorage.getItem('ID');
+        var payload = {
+          title: this.title,
+          description: this.description,
+          price: this.price
+        };
+        axios.put('/api/notes/' + id, payload)
+          .then (function(res) {
+            this.notes = res.data;
+            //console.log(res.data);
+            location.reload();
+          })
+          .catch (function(err){
+
+          });
       }
     }
   });

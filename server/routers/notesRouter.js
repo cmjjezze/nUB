@@ -41,7 +41,7 @@ router.put('/:id', (req, res) => {
   const notes = store.get('notes');
 
   for(let i = 0; i < notes.length; i++) {
-    if(notes[i].id === id) {
+    if(notes[i].id == id) {
       notes[i].title = req.body.title;
       notes[i].description = req.body.description;
       notes[i].price = req.body.price;
